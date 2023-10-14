@@ -10,13 +10,11 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int buff_i = 0, len;
+	int buff_i = 0;
 
-	if (!format)
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-
 	va_start(list, format);
-
 	while (*format)
 	{
 		if (*format != '%')
@@ -27,25 +25,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-
-			if (*format == '\0')
-				break;
-			else if (*format == 'c')
-			{
-				_putchar(va_arg(list, int));
-				buff_i++;
-			}
-			else if (*format == '%')
-			{
-				_putchar(*format);
-				buff_i++;
-			}
-			
-			else if (*format == 's')
-			{
-				len = _puts(va_arg(list, char *));
-				buff_i += len;
-			}
+			buff_i += get_spec(*format, list, buff_i);
 		}
 		format++;
 	}
