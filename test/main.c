@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-    /*int len;
+	/*int len;
     int len2;
     unsigned int ui;
     void *addr;
@@ -28,12 +28,16 @@ int main(void)
     printf("Unsigned octal:[%o]\n", ui);
     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);*/
-	_printf("Let's try to printf a simple sentence.\n");
+    _printf("Let's try to printf a simple sentence.\n");
 	_printf("This should print the percent sign: [%%]\n");
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
+    _printf("");
+    _printf("% ");
+    _printf("%  ");
+
     /*_printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");
