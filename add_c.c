@@ -7,8 +7,11 @@
  * Return: pointer to the buffer with the char appended
  */
 
-char *add_c(char *buff, char c)
+int add_c(char *buff, va_list c)
 {
 	int bufflen = _strlen(buff);
 
+	buff[bufflen] = va_arg(c, int);
+
+	return (1);
 }

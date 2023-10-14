@@ -10,41 +10,42 @@ int _printf(const char *format, ...)
 {
 	char buff[BUFF_SIZE];
 	va_list list;
-	int i = 0;
+	int i = 0, j = 0, buff_i = 0;
+
+	fs_t formats[] = {
+		{"c", add_c},
+		{"s", add_s},
+		{"%", add_c},
+		/*{"d", add_int},
+		{"i", add_int}*/
+	};
+
+	if (!format)
+		return (-1);
 
 	va_start(list, format);
 
-	if(format)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		while (*format)
+		if (format[i] == '%')
 		{
-			switch (*format)
+			i++;
+			for (j = 0; j < 5; j++)
 			{
-				case '\':
-					break;
-				case '%':
-					{
-						format++;
-						switch (*format)
-						{
-							case 'c':
-								goto default2;
-						}
-
-					}
-					break;
-				default:
-					{
-						buff[i] = *format;
-						i++;
-					}
+				if (format[i] == formats[j].c)
+					buff_i += formats[j].f(buff, list);
 			}
+		}
+		else
+		{
+			buff[buff_i] = format[i];
+		}
 
-			if (i == BUFF_SIZE)
-			{
-				write(1, buff, i);
-			}
-			format++;
+		if (buff_i == BUFF_SIZE)
+		{
+			write(1, buff, buff_i);
+			buff_i = 0;
 		}
 	}
+	return (buff_i);
 }
