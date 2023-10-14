@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _printf - produces output according to a format
@@ -8,44 +9,42 @@
 
 int _printf(const char *format, ...)
 {
-	char buff[BUFF_SIZE];
 	va_list list;
-	int i = 0, j = 0, buff_i = 0;
-
-	fs_t formats[] = {
-		{"c", add_c},
-		{"s", add_s},
-		{"%", add_c},
-		/*{"d", add_int},
-		{"i", add_int}*/
-	};
+	int buff_i = 0, len;
 
 	if (!format)
 		return (-1);
-
 	va_start(list, format);
-
-	for (i = 0; format[i] != '\0'; i++)
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format != '%')
 		{
-			i++;
-			for (j = 0; j < 3; j++)
-			{
-				if (format[i] == formats[j].c)
-					buff_i += formats[j].f(buff, list); /*this should return the umber of chars inserted into the buffer right? */
-			}
+			_putchar(*format);
+			buff_i++;
 		}
 		else
 		{
-			buff[buff_i] = format[i];
+			format++;
+			if (*format == '\0')
+				break;
+			else if (*format == 'c')
+			{
+				_putchar(va_arg(list, int));
+				buff_i++;
+			}
+			else if (*format == '%')
+			{
+				_putchar(*format);
+				buff_i++;
+			}
+			else if (*format == 's')
+			{
+				len = _puts(va_arg(list, char *));
+				buff_i += len;
+			}
 		}
-
-		if (buff_i == BUFF_SIZE)
-		{
-			write(1, buff, buff_i);
-			buff_i = 0;
-		}
+		format++;
 	}
+	va_end(list);
 	return (buff_i);
 }

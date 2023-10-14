@@ -11,8 +11,6 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	int buff_i = 0, len;
-	char buffer;
-	char *str_buffer;
 
 	if (!format)
 		return (-1);
@@ -21,39 +19,34 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-		if (*format == '\0')
-			break;
 		if (*format != '%')
 		{
 			_putchar(*format);
 			buff_i++;
-
 		}
 		else
 		{
 			format++;
 
-			if (*format == 'c')
+			if (*format == '\0')
+				break;
+			else if (*format == 'c')
 			{
-				buffer = va_arg(list, int);
-				write(1, &buffer, 1);
+				_putchar(va_arg(list, int));
 				buff_i++;
 			}
-			if (*format == '%')
+			else if (*format == '%')
 			{
-				_putchar('%');
+				_putchar(*format);
 				buff_i++;
 			}
 			
-			if (*format == 's')
+			else if (*format == 's')
 			{
-				str_buffer = va_arg(list, char *);
-				len = _strlen(str_buffer);
-				write(1, str_buffer,len);
-				buff_i++;
+				len = _puts(va_arg(list, char *));
+				buff_i += len;
 			}
 		}
-		_putchar(buff_i);
 		format++;
 	}
 	va_end(list);

@@ -29,10 +29,11 @@ int main(void)
     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);*/
 	_printf("Let's try to printf a simple sentence.\n");
-   /* _printf("Character:[%c]\n", 'H');
+	_printf("This should print the percent sign: [%%]\n");
+    _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
-    printf("String:[%s]\n", "I am a string !"); */
+    printf("String:[%s]\n", "I am a string !");
     /*_printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");

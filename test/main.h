@@ -13,13 +13,11 @@ typedef struct fs
 	char c;
 	int (*f)(va_list list);
 } fs_t;
-int _printf(const char *format, ...);
-
-int add_s(char *buff, va_list list);
-int add_i(va_list list);
 
 int _strlen(char *string);
 int _putchar(char c);
 int _puts(char *string);
+
+int _printf(const char *format, ...);
 
 #endif

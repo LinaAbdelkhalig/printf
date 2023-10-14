@@ -8,17 +8,21 @@
 
 #define BUFF_SIZE 1024
 
-typedef struct fs 
+/**
+ * struct fs - struct fs
+ * @c: the format
+ * @f: the function associtated
+ */
+typedef struct fs
 {
-	char *c;
-	int (*f)(char *buffer, va_list list);
+	char c;
+	int (*f)(va_list list);
 } fs_t;
-int _printf(const char *format, ...);
-
-int add_c(char *buff, va_list list);
-int add_s(char *buff, va_list list);
-int add_i(char *buff, va_list list);
 
 int _strlen(char *string);
+int _putchar(char c);
+int _puts(char *string);
+
+int _printf(const char *format, ...);
 
 #endif
