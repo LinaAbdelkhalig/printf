@@ -30,10 +30,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			for (j = 0; j < 5; j++)
+			for (j = 0; j < 3; j++)
 			{
 				if (format[i] == formats[j].c)
-					buff_i += formats[j].f(buff, list);
+					buff_i += formats[j].f(buff, list); /*this should return the umber of chars inserted into the buffer right? */
 			}
 		}
 		else
