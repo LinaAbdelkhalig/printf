@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int buff_i = 0, len;
+	int buff_i = 0;
 
 	if (!format || !*format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);

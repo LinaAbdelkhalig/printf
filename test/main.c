@@ -28,16 +28,27 @@ int main(void)
     printf("Unsigned octal:[%o]\n", ui);
     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);*/
+<<<<<<< HEAD
     _printf("Let's try to printf a simple sentence.\n");
 	_printf("This should print the percent sign: [%%]\n");
+=======
+	_printf("Let's try to printf a simple sentence.\n");
+	_printf("This should print the \n percent sign #: [%%]\n");
+>>>>>>> 649ea5d4ae07e912c37eb4959e5de428a5cedc04
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
+<<<<<<< HEAD
     _printf("");
     _printf("% ");
     _printf("%  ");
 
+=======
+    _printf("%s", NULL);
+    printf("%s", NULL);
+    printf(NULL);
+>>>>>>> 649ea5d4ae07e912c37eb4959e5de428a5cedc04
     /*_printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");

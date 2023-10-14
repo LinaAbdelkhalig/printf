@@ -17,6 +17,8 @@ int _puts(char *string)
 			_putchar(string[i]);
 		}
 	}
+	else
+		_puts("(null)");
 
 	return (i);
 }
