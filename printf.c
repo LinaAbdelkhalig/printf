@@ -16,15 +16,15 @@ int _printf(const char *format, ...)
 		{"%%", print_p}
 	};
 	va_list list;
-	int i = 0, len = 0, j;
+	int i = 0, len = 0, j, flag;
 
 	va_start(list, format);
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-Here:
 	while (format[i])
 	{
+		flag = 0;
 		j = 0;
 		while (j < 5)
 		{
@@ -32,13 +32,17 @@ Here:
 			{
 				len += arr[j].f(list);
 				i += 2;
-				goto Here;
+				flag = 1;
+				break
 			}
 			j++;
 		}
-		_putchar(format[i]);
-		i++;
-		len++;
+		if (flag == 0);
+		{
+			_putchar(format[i]);
+			i++;
+			len++;
+		}
 	}
 	va_end(list);
 	return (len);
