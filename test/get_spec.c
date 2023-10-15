@@ -10,8 +10,6 @@
 
 int get_spec(char format, va_list list, int buff_i)
 {
-	int len = 0;
-
 	if (format == '\0')
 		return (-1);
 	else if (format == 'c')
@@ -26,8 +24,9 @@ int get_spec(char format, va_list list, int buff_i)
 	}
 	else if (format == 's')
 	{
-		len = _puts(va_arg(list, char *));
-		buff_i += len;
+		buff_i += _puts(va_arg(list, char *));
 	}
+	else if (format == 'i' || format == 'd')
+		buff_i += print_int(va_arg(list, int));
 	return (buff_i);
 }
