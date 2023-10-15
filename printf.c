@@ -20,10 +20,7 @@ int _printf(const char *format, ...)
 	while (format && *format)
 	{
 		if (*format != '%')
-		{
-			_putchar(*format);
-			buff_i++;
-		}
+			buff_i += _putchar(*format);
 		else
 		{
 			format++;

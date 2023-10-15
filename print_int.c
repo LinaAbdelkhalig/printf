@@ -23,7 +23,7 @@ int print_int(int n)
 	{
 		i += print_int(x / 10);
 	}
-	i += _putchar((x % 10) + '0'); 
+	i += _putchar((x % 10) + '0');
 
 	return (i);
 }
