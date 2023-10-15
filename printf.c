@@ -27,8 +27,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			format++;
-			get_spec(*format, list, buff_i);
-			/*if (*format == '\0')
+			if (*format == '\0')
 				break;
 			else if (*format == 'c')
 			{
@@ -47,7 +46,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			{
 				buff_i += print_int(va_arg(list, int));
-			}*/
+			}
 		}
 		format++;
 	}
