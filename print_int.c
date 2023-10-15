@@ -10,19 +10,20 @@ int print_int(int n)
 {
 	unsigned int x, i = 0;
 
-	x = n;
 	if (n < 0)
 	{
-		_putchar('-');
+		i += _putchar('-');
 		x = -n;
-		i++;
+	}
+	else
+	{
+		x = n;
 	}
 	if (x / 10 != 0)
 	{
 		print_int(x / 10);
 	}
-	_putchar((x % 10) + '0');
-	i++;
+	i += _putchar((x % 10) + '0');
 
 	return (i);
 }
