@@ -34,6 +34,8 @@ int _printf(const char *format, ...)
 				buff_i += _puts(va_arg(list, char *));
 			else if (*format == 'd' || *format == 'i')
 				buff_i += print_int(va_arg(list, int));
+			else if (*format == 'b')
+				buff_i += print_binary(va_arg(list, unsigned int));
 		}
 		format++;
 	}

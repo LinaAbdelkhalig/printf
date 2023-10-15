@@ -11,9 +11,6 @@ int print_i(va_list list)
 	int n = va_arg(list, int);
 	int m, d = (n % 10), dg, e = 1, ind = 1;
 
-	if (list == NULL)
-		return (-1);
-
 	n = n / 10;
 	m = n;
 

@@ -10,11 +10,11 @@
 int main(void)
 {
 	int len, len2, neg = -40, x = 0, y = 0;
-    char *string = "test for the print_s func\n";
+    /*char *string = "test for the print_s func\n";*/
     /*unsigned int ui;
     void *addr;*/
 
-    _printf("%s", string);
+	_printf("%b\n", 98);
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     /*ui = (unsigned int)INT_MAX + 1024;
