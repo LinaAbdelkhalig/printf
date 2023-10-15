@@ -19,11 +19,15 @@ int print_int(int n)
 	{
 		x = n;
 	}
-	if (x / 10 != 0) /*why is this */
+	if (x / 10 != 0)
 	{
-		print_int(x / 10);
-	} /*must add an else clause */
-	i += _putchar((x % 10) + '0');
+		i += print_int(x / 10);
+	}
+	else
+	{
+		i += _putchar('0');
+	}
+	i += _putchar((x % 10) + '0'); 
 
 	return (i);
 }

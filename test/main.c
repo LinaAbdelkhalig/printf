@@ -9,8 +9,7 @@
  */
 int main(void)
 {
-    int len;
-    int len2;
+	int len, len2, neg = -40, x = 0, y = 0;
     char *string = "test for the print_s func\n";
     /*unsigned int ui;
     void *addr;*/
@@ -20,10 +19,14 @@ int main(void)
     len2 = printf("Let's try to printf a simple sentence.\n");
     /*ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;*/
-    _printf("Length:[%d, %i]\n", len, len);
-    printf("Length:[%d, %i]\n", len2, len2);
-    _printf("Negative:[%d]\n", 10.8);
-    printf("Negative:[%d]\n", 10.8);
+    x +=_printf("Length:[%d, %i]\n", 0123, 0456);
+    y += printf("Length:[%d, %i]\n", 0123, 0456);
+    _printf("%d", x);
+    printf("%d", x);
+    _printf("%d", y);
+    printf("%d", y);
+    _printf("Negative:[%d]\n", neg);
+    printf("Negative:[%d]\n", neg);
     /*_printf("Unsigned:[%u]\n", ui);
     printf("Unsigned:[%u]\n", ui);
     _printf("Unsigned octal:[%o]\n", ui);
