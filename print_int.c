@@ -13,7 +13,7 @@ int print_int(int n)
 	if (n < 0)
 	{
 		i += _putchar('-');
-		x = -n; /*x is defined as unsigned */
+		x = -n;
 	}
 	else
 	{
@@ -22,10 +22,6 @@ int print_int(int n)
 	if (x / 10 != 0)
 	{
 		i += print_int(x / 10);
-	}
-	else
-	{
-		i += _putchar('0');
 	}
 	i += _putchar((x % 10) + '0'); 
 
