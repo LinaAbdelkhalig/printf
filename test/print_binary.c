@@ -9,8 +9,13 @@
 int print_binary(unsigned int num)
 {
 	int count = 0, i;
-	char *bin = malloc(sizeof(char) * 33);
+	char *bin;
 
+	if (num == 0 || num == 1)
+	{
+		return (print_int(num));
+	}
+	bin = malloc(sizeof(char) * 33);
 	if (!bin)
 		return (-1);
 	bin[32] = '\0';
