@@ -24,6 +24,10 @@ int print_c(va_list list);
 int print_s(va_list list);
 int print_p(void);
 int print_i(va_list list);
+int _puts(char *string);
+int print_int(int);
+
+int get_spec(char format, va_list list, int buff_i);
 
 int _printf(const char *format, ...);
 

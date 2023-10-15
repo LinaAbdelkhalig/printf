@@ -23,7 +23,7 @@ int print_int(int n)
 	{
 		print_int(x / 10);
 	} /*must add an else clause */
-	i += _putchar((x % 10) + '0'); 
+	i += _putchar((x % 10) + '0');
 
 	return (i);
 }
