@@ -1,45 +1,39 @@
 #include "main.h"
-#include <stdio.h>
-
-/**
- * _printf - produces output according to a format
- * @format: a char string
- * Return: the number of characters printed excecpt for the \0
- */
 
 int _printf(const char *format, ...)
 {
-	va_list list;
-	int buff_i = 0;
+    formsp arr[] =
+    {
+        {"%c", print_c},
+        {"%s", print_s},
+	{"%d", print_i},
+	{"%i", print_i},
+        {"%%", print_p}
+    };
+    va_list list;
+    int i = 0, len = 0, j;
+    va_start(list, format);
+    if(!format || (format[0] == '%' && format[1] == '\0'))
+       return (-1);
 
-	if (!format || !*format || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && format[2] == '\0')
-		return (-1);
-	va_start(list, format);
-	while (format && *format)
-	{
-		if (*format != '%')
-		{
-			_putchar(*format);
-			buff_i++;
-		}
-		else
-		{
-			format++;
-			if (*format == '\0')
-				break;
-			else if (*format == 'c')
-				buff_i += _putchar(va_arg(list, int));
-			else if (*format == '%')
-				buff_i += _putchar(*format);
-			else if (*format == 's')
-				buff_i += _puts(va_arg(list, char *));
-			else if (*format == 'd' || *format == 'i')
-				buff_i += print_int(va_arg(list, int));
-		}
-		format++;
-	}
-	va_end(list);
-	return (buff_i);
+Here:
+    while (format[i])
+    {
+	    j = 0;
+	    while (j < 5)
+	    {
+		    if (arr[j].fs[0] == format[i] && arr[j].fs[1] == format[i+1])
+		    {
+			    len += arr[j].f(list);
+			    i += 2;
+			    goto Here;
+		    }
+		    j++;
+	    }
+	    _putchar(format[i]);
+	    i++;
+	    len++;
+    }
+    va_end(list);
+    return (len);
 }
