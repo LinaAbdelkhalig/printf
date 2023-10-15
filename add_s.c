@@ -3,8 +3,8 @@
 /**
  * add_s - add a string the buffer
  * @buff: pointer to the buffer
- * @string: the string to be added to the buffer //is not a parameter
- * Return: pointer to the buffer with the string appended
+ * @list: the list of arguments
+ * Return: the length of the string after the new string is appended
  */
 
 int add_s(char *buff, va_list list)

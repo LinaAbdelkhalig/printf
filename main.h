@@ -5,11 +5,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+
 /**
- * struct fs - struct fs
- * @c: the format
+ * struct format - the format specifier and its function
+ * @fs: the format specifier
  * @f: the function associtated
  */
+
 typedef struct format
 {
 	char *fs;
