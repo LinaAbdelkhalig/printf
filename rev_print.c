@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * re_print - prints a reversed string
+ * rev_print - prints a reversed string
  * @r: the string to be reveresed
  * Return: a count of the printed chars
  */

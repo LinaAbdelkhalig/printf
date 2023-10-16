@@ -17,7 +17,7 @@ int main(void)
 	p = &n;
 
 	_printf("thi is test sonogon %r\n", string);
-
+	_printf("%R\n", "sonogon");
 	_printf("this is a pointer %p\n", p);
 	printf("this is a pointer %p\n", p);
 

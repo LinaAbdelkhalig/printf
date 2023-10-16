@@ -2,7 +2,7 @@
 
 /**
  * cont - the continuation for the printf function
- * @buff_i - the number of chars printed so far
+ * @buff_i: the number of chars printed so far
  * @format: pointer to the format char address
  * @list: the list containing the arguments
  * Return: the new buff_i
@@ -18,6 +18,8 @@ int cont(int buff_i, char format, va_list list)
 		buff_i += print_pt(va_arg(list, void *));
 	else if (format == 'r')
 		buff_i += rev_print(va_arg(list, char *));
+	else if (format == 'R')
+		buff_i += get_rotated(va_arg(list, char *));
 	return (buff_i);
 }
 

@@ -18,6 +18,8 @@ int cont(int buff_i, char format, va_list list)
 		buff_i += print_pt(va_arg(list, void *));
 	else if (format == 'r')
 		buff_i += rev_print(va_arg(list, char *));
+	else if (format == 'R')
+		buff_i += get_rotated(va_arg(list, char *));
 	return (buff_i);
 }
 
