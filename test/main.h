@@ -31,6 +31,12 @@ int print_binary(unsigned int);
 int print_octal(unsigned int);
 int print_hex(unsigned int);
 int print_HEX(unsigned int);
+int print_extHEX(unsigned int num);
+int print_exts(char *string);
+int print_pt(void *pt);
+int print_pthex(unsigned long int num);
+int rev_print(char *);
+int get_rotated(char *);
 
 int get_spec(char format, va_list list, int buff_i);
 int _printf(const char *format, ...);
