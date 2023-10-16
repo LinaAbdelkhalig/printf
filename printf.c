@@ -42,6 +42,8 @@ int _printf(const char *format, ...)
 				buff_i += print_hex(va_arg(list, unsigned int));
 			else if (*format == 'X')
 				buff_i += print_HEX(va_arg(list, unsigned int));
+			else if (*format == 'u')
+				buff_i += print_ui(va_arg(list, unsigned int));
 		}
 		format++;
 	}

@@ -26,6 +26,7 @@ int print_p(void);
 int print_i(va_list list);
 int _puts(char *string);
 int print_int(int);
+int print_ui(unsigned int);
 int print_binary(unsigned int);
 int print_octal(unsigned int);
 int print_hex(unsigned int);
