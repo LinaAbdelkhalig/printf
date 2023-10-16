@@ -36,5 +36,5 @@ int print_HEX(unsigned int num)
 		}
 	}
 	free(hex);
-	return count;
+	return (count);
 }

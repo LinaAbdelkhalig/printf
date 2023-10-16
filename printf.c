@@ -1,5 +1,27 @@
 #include "main.h"
-#include <stdio.h>
+
+/**
+ * cont - the continuation for the printf function
+ * @buff_i: the number of chars printed so far
+ * @format: pointer to the format char address
+ * @list: the list containing the arguments
+ * Return: the new buff_i
+ */
+
+int cont(int buff_i, char format, va_list list)
+{
+	if (format == 'u')
+		buff_i += print_ui(va_arg(list, unsigned int));
+	else if (format == 'S')
+		buff_i += print_exts(va_arg(list, char *));
+	else if (format == 'p')
+		buff_i += print_pt(va_arg(list, void *));
+	else if (format == 'r')
+		buff_i += rev_print(va_arg(list, char *));
+	else if (format == 'R')
+		buff_i += get_rotated(va_arg(list, char *));
+	return (buff_i);
+}
 
 /**
  * _printf - produces output according to a format
@@ -42,8 +64,8 @@ int _printf(const char *format, ...)
 				buff_i += print_hex(va_arg(list, unsigned int));
 			else if (*format == 'X')
 				buff_i += print_HEX(va_arg(list, unsigned int));
-			else if (*format == 'u')
-				buff_i += print_ui(va_arg(list, unsigned int));
+			else
+				buff_i = cont(buff_i, *format, list);
 		}
 		format++;
 	}
