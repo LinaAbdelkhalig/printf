@@ -28,8 +28,8 @@ int main(void)
     printf("%d", y);
     _printf("Negative:[%d]\n", neg);
     printf("Negative:[%d]\n", neg);
-    /*_printf("Unsigned:[%u]\n", ui);
-    printf("Unsigned:[%u]\n", ui);*/
+    _printf("Unsigned:[%u]\n", ui);
+    printf("Unsigned:[%u]\n", ui);
     _printf("Unsigned octal:[%o]\n", ui);
     printf("Unsigned octal:[%o]\n", ui);
     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
