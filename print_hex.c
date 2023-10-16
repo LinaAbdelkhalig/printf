@@ -10,13 +10,11 @@
 int print_hex(unsigned int num)
 {
 	int count = 0, mod, i;
-	char *hex;
+	char hex[8];
 
 	if (num < 10)
 		return (print_int(num));
-	hex = malloc(sizeof(char) * 9);
-	if (!hex)
-		return (-1);
+
 	hex[8] = '\0';
 	for (i = 7; i >= 0; i--)
 	{
@@ -36,6 +34,6 @@ int print_hex(unsigned int num)
 			break;
 		}
 	}
-	free(hex);
+
 	return (count);
 }
