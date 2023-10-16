@@ -14,7 +14,7 @@ int main(void)
     /*unsigned int ui;
     void *addr;*/
 
-    x = _printf("%b\n", 32);
+    x = _printf("%b\n", 4294967295);
     printf("%d\n", x);
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");

@@ -19,7 +19,7 @@ int print_binary(unsigned int num)
 	if (!bin)
 		return (-1);
 	bin[32] = '\0';
-	for (i = 31; i > 0; i--)
+	for (i = 31; i >= 0; i--)
 	{
 		bin[i] = (num % 2) + '0';
 		num /= 2;
