@@ -10,7 +10,7 @@
 int print_hex(unsigned int num)
 {
 	int count = 0, mod, i;
-	char hex[8];
+	char hex[9];
 
 	if (num < 10)
 		return (print_int(num));

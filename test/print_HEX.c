@@ -2,7 +2,7 @@
 
 /**
  * print_HEX - converts an unsigned int to hexadecimal
- *              with capital letters, and prints it
+ *		with small letters, and prints it
  * @num: the unsigned integer number to be converted
  * Return: the number of printed numbers
  */
@@ -10,13 +10,11 @@
 int print_HEX(unsigned int num)
 {
 	int count = 0, mod, i;
-	char *hex;
+	char hex[9];
 
 	if (num < 10)
 		return (print_int(num));
-	hex = malloc(sizeof(char) * 9);
-	if (!hex)
-		return (-1);
+
 	hex[8] = '\0';
 	for (i = 7; i >= 0; i--)
 	{
@@ -27,6 +25,7 @@ int print_HEX(unsigned int num)
 			hex[i] = mod - 10 + 'A';
 		num /= 16;
 	}
+
 	for (i = 0; i < 8; i++)
 	{
 		if (hex[i] != '0')
@@ -35,6 +34,6 @@ int print_HEX(unsigned int num)
 			break;
 		}
 	}
-	free(hex);
+
 	return (count);
 }

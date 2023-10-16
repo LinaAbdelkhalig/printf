@@ -8,7 +8,7 @@
 
 int print_exts(char *string)
 {
-	int length, i;
+	int length = 0, i;
 	char *s = string;
 
 	if (!string)

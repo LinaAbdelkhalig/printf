@@ -22,12 +22,11 @@ int main(void)
 	printf("this is a pointer %p\n", p);
 
 	_printf("%S\n", "Best\nSchool");
-
-	/*int len, len2, neg = -40, x = 0, y = 0;
+    /*int len, len2, neg = -40, x = 0, y = 0;
     unsigned int ui;
-    void *addr;*/
+    void *addr;    
 
-    /*x = _printf("%b\n", 4294967295);
+    x = _printf("%b\n", 4294967295);
     printf("%d\n", x);
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
@@ -45,8 +44,8 @@ int main(void)
     printf("Unsigned:[%u]\n", ui);
     _printf("Unsigned octal:[%o]\n", ui);
     printf("Unsigned octal:[%o]\n", ui);
-    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    _printf("Unsigned hexadecimal:[%x, %X]\n", 0, 8);
+    printf("Unsigned hexadecimal:[%x, %X]\n", 0, 8);
     _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
@@ -58,6 +57,6 @@ int main(void)
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");*/ 
+    printf("Unknown:[%r]\n");*/
     return (0);
 }
