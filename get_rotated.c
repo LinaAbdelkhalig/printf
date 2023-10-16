@@ -12,6 +12,9 @@ int get_rotated(char *string)
 	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
+	if (!string)
+		return (-1);
+
 	for (i = 0; string[i] != '\0'; i++)
 	{
 		for (j = 0; j < 52; j++)
@@ -21,6 +24,10 @@ int get_rotated(char *string)
 				_putchar(rot[j]);
 				break;
 			}
+		}
+		if (j == 52)
+		{
+			_putchar(string[i]);
 		}
 	}
 

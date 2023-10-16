@@ -12,7 +12,7 @@ int print_exts(char *string)
 	char *s = string;
 
 	if (!string)
-		s = "(null)";
+		return (-1);
 	while (*s)
 	{
 		if (*s < 32 || *s >= 127) /*if its a non-printable char*/
