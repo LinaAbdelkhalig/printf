@@ -36,6 +36,12 @@ int _printf(const char *format, ...)
 				buff_i += print_int(va_arg(list, int));
 			else if (*format == 'b')
 				buff_i += print_binary(va_arg(list, unsigned int));
+			else if (*format == 'o')
+				buff_i += print_octal(va_arg(list, unsigned int));
+			else if (*format == 'x')
+				buff_i += print_hex(va_arg(list, unsigned int));
+			else if (*format == 'X')
+				buff_i += print_HEX(va_arg(list, unsigned int));
 		}
 		format++;
 	}
