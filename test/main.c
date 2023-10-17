@@ -21,7 +21,8 @@ int main(void)
 	_printf("this is a pointer %p\n", p);
 	printf("this is a pointer %p\n", p);
 
-	_printf("%S\n", "Best\nSchool");
+	_printf("Complete the sentence: You %s nothing, jon snow.\n", (char *)0);
+	_printf("%S\n", "Best\nschool");
     /*int len, len2, neg = -40, x = 0, y = 0;
     unsigned int ui;
     void *addr;    
