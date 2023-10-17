@@ -2,7 +2,7 @@
 
 /**
  * cont - the continuation for the printf function
- * @buff_i - the number of chars printed so far
+ * @buff_i: the number of chars printed so far
  * @format: pointer to the format char address
  * @list: the list containing the arguments
  * Return: the new buff_i

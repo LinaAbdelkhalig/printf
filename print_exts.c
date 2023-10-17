@@ -9,19 +9,18 @@
 int print_exts(char *string)
 {
 	int length = 0, i;
-	char *s = string;
 
 	if (!string)
 		return (-1);
-	while (*s)
+	while (*string)
 	{
-		if (*s < 32 || *s >= 127) /*if its a non-printable char*/
+		if (*string < 32 || *string >= 127) /*if its a non-printable char*/
 		{
 			_putchar('\\');
 			_putchar('x');
 
 			length += 2; /*because we printed 2 chars*/
-			i = *s;
+			i = *string;
 			if (i < 16) /*if its representable by ascii*/
 			{
 				_putchar('0'); /*for the ascii rep*/
@@ -31,10 +30,10 @@ int print_exts(char *string)
 		}
 		else
 		{
-			_putchar(*s);
+			_putchar(*string);
 			length++;
 		}
-		s++;
+		string++;
 	}
 	return (length);
 }

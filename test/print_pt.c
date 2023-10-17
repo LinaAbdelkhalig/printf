@@ -12,7 +12,10 @@ int print_pt(void *pt)
 	int count = 0;
 
 	if (!pt)
-		return (0);
+	{
+		_puts("(nil)");
+		return (-1);
+	}
 
 	uli = (unsigned long int)pt;
 	_puts("0x");

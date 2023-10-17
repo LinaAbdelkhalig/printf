@@ -10,19 +10,20 @@
 
 int main(void)
 {
-	int n = 56;
+	/*int n = 56;
 	void *p;
 	char *string = "test for the print_s func";
 
 	p = &n;
-
+	_printf("%!\n");
+	_printf("lets see if this works %c\n", 65);
 	_printf("thi is test sonogon %r\n", string);
-	_printf("%R\n", "sono-gon");
-	_printf("this is a pointer %p\n", p);
-	printf("this is a pointer %p\n", p);
+	_printf("%R\n", "sono-gon");*/
+	_printf("this is a pointer %p\n", NULL);
+	printf("this is a pointer %p\n", NULL);
 
 	_printf("Complete the sentence: You %s nothing, jon snow.\n", (char *)0);
-	_printf("%S\n", "Best\nschool");
+	_printf("%S\n %S", "Best\nschool","\0");
     /*int len, len2, neg = -40, x = 0, y = 0;
     unsigned int ui;
     void *addr;    

@@ -10,6 +10,9 @@ int _puts(char *string)
 {
 	int i;
 
+	if (!string)
+		return (-1);
+
 	if (string)
 	{
 		for (i = 0; string[i] != '\0'; i++)
@@ -17,8 +20,6 @@ int _puts(char *string)
 			_putchar(string[i]);
 		}
 	}
-	else
-		_puts("(null)");
 
 	return (i);
 }
