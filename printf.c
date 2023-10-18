@@ -1,6 +1,37 @@
 #include "main.h"
 
 /**
+ * _strchr - looks for a character in the string
+ * @c: the character we are looking for
+ * @s: the string to be searched
+ * Return: 1 if found, 0 if not found
+ */
+
+int _strchr(char c, char *s)
+{
+	while (*s != '\0')
+	{
+		if (*s == c)
+			return (1);
+		s++;
+	}
+	return (0);
+}
+
+/**
+ * _isdigit - checks if c is an integer
+ * @c: the argument to be checked if is digit
+ * Return: 1 if is integer, 0 elsewise
+ */
+
+int _isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
+}
+
+/**
  * cont - the continuation for the printf function
  * @buff_i: the number of chars printed so far
  * @format: pointer to the format char address
@@ -20,6 +51,8 @@ int cont(int buff_i, char format, va_list list)
 		buff_i += rev_print(va_arg(list, char *));
 	else if (format == 'R')
 		buff_i += get_rotated(va_arg(list, char *));
+	else if (!_strchr(format, "+-' #lh0.") && !_isdigit(format))
+		buff_i += _putchar(format);
 	return (buff_i);
 }
 

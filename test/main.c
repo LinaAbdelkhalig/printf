@@ -19,8 +19,7 @@ int main(void)
 	_printf("lets see if this works %c\n", 65);
 	_printf("thi is test sonogon %r\n", string);
 	_printf("%R\n", "sono-gon");*/
-	_printf("this is a pointer %p\n", NULL);
-	printf("this is a pointer %p\n", NULL);
+	_printf("%s\n", NULL);
 
 	_printf("Complete the sentence: You %s nothing, jon snow.\n", (char *)0);
 	_printf("%S\n %S", "Best\nschool","\0");

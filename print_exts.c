@@ -11,7 +11,7 @@ int print_exts(char *string)
 	int length = 0, i;
 
 	if (!string)
-		return (-1);
+		return (_puts("(null)"));
 	while (*string)
 	{
 		if (*string < 32 || *string >= 127) /*if its a non-printable char*/
