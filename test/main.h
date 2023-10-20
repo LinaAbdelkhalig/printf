@@ -7,9 +7,11 @@
 #include <limits.h>
 
 int _strlen(char *string);
+int _strchr(char, char *);
 int _putchar(char c);
 int _puts(char *);
 int print_int(int);
+int check_flag(char *, va_list);
 int print_ui(unsigned int);
 int print_binary(unsigned int);
 int print_octal(unsigned int);
@@ -22,6 +24,6 @@ int print_pthex(unsigned long int);
 int rev_print(char *);
 int get_rotated(char *);
 
-int _printf(const char *format, ...);
+int _printf(char *format, ...);
 
 #endif

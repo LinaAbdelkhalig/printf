@@ -14,11 +14,11 @@ int print_pthex(unsigned long int num)
 
 	if (num < 10)
 		return (print_int(num));
-	hex = malloc(sizeof(unsigned long int) * 13);
+	hex = malloc(18);
 	if (!hex)
 		return (-1);
-	hex[12] = '\0';
-	for (i = 11; i >= 0; i--)
+	hex[17] = '\0';
+	for (i = 16; i >= 0; i--)
 	{
 		mod = num % 16;
 		if (mod < 10)
@@ -28,11 +28,11 @@ int print_pthex(unsigned long int num)
 		num /= 16;
 	}
 
-	for (i = 0; i < 12; i++)
+	for (i = 0; i < 17; i++)
 	{
 		if (hex[i] != '0')
 		{
-			count += write(1, &hex[i], 12 - i);
+			count += write(1, &hex[i], 17 - i);
 			break;
 		}
 	}

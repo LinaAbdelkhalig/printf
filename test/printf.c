@@ -1,24 +1,6 @@
 #include "main.h"
 
 /**
- * _strchr - looks for a character in the string
- * @c: the character we are looking for
- * @s: the string to be searched
- * Return: 1 if found, 0 if not found
- */
-
-int _strchr(char c, char *s)
-{
-	while (*s != '\0')
-	{
-		if (*s == c)
-			return (1);
-		s++;
-	}
-	return (0);
-}
-
-/**
  * _isdigit - checks if c is an integer
  * @c: the argument to be checked if is digit
  * Return: 1 if is integer, 0 elsewise
@@ -41,8 +23,14 @@ int _isdigit(int c)
 
 int cont(int buff_i, char format, va_list list)
 {
-	if (format == 'u')
+	if (format == 'x')
+		buff_i += print_hex(va_arg(list, unsigned int));
+	else if (format == 'X')
+		buff_i += print_HEX(va_arg(list, unsigned int));
+	else if (format == 'u')
 		buff_i += print_ui(va_arg(list, unsigned int));
+	else if (format == 'o')
+		buff_i += print_octal(va_arg(list, unsigned int));
 	else if (format == 'S')
 		buff_i += print_exts(va_arg(list, char *));
 	else if (format == 'p')
@@ -51,8 +39,11 @@ int cont(int buff_i, char format, va_list list)
 		buff_i += rev_print(va_arg(list, char *));
 	else if (format == 'R')
 		buff_i += get_rotated(va_arg(list, char *));
-	else if (!_strchr(format, "+-' #lh0.") && !_isdigit(format))
+	else if (!_strchr(format, "'#lh0.") && !_isdigit(format))
+	{
+		buff_i += _putchar('%');
 		buff_i += _putchar(format);
+	}
 	return (buff_i);
 }
 
@@ -62,15 +53,15 @@ int cont(int buff_i, char format, va_list list)
  * Return: the number of characters printed excecpt for the \0
  */
 
-int _printf(const char *format, ...)
+int _printf(char *format, ...)
 {
 	va_list list;
 	int buff_i = 0;
 
-	if (!format || !*format || (format[0] == '%' && format[1] == '\0'))
+	if (!format || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && format[2] == '\0')
-		return (-1);
+		return (0);
 	va_start(list, format);
 	while (format && *format)
 	{
@@ -87,16 +78,15 @@ int _printf(const char *format, ...)
 				buff_i += _putchar(*format);
 			else if (*format == 's')
 				buff_i += _puts(va_arg(list, char *));
+			else if (*format == '+' || *format == ' ' || *format == '#')
+			{
+				buff_i += check_flag(format, list);
+				format++;
+			}
 			else if (*format == 'd' || *format == 'i')
 				buff_i += print_int(va_arg(list, int));
 			else if (*format == 'b')
 				buff_i += print_binary(va_arg(list, unsigned int));
-			else if (*format == 'o')
-				buff_i += print_octal(va_arg(list, unsigned int));
-			else if (*format == 'x')
-				buff_i += print_hex(va_arg(list, unsigned int));
-			else if (*format == 'X')
-				buff_i += print_HEX(va_arg(list, unsigned int));
 			else
 				buff_i = cont(buff_i, *format, list);
 		}

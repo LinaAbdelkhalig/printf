@@ -10,6 +10,18 @@
 
 int main(void)
 {
+	printf("%d\n", _printf("%+d", 0)+ printf("%+d", 0));
+	printf("%d\n", _printf("% ")); 
+	printf("%d\n", _printf("% % % % "));
+	printf("%d\n", _printf("%+i", -1024) + printf("%+d", -1024));
+	printf("%d\n", _printf("%+i", INT_MAX)+printf("%+d", INT_MAX));
+	printf("%d\n", _printf("There is %+d bytes in %+d KB\n", 1024, 1)+printf("There is %+d bytes in %+d KB\n", 1024, 1));
+	printf("%d\n", _printf("%+i - %+i = %+i\n", 1024, 2048, -1024)+_printf("%+d - %+d = %+d\n", 1024, 2048, -1024));
+
+	printf("%d\n", _printf("% d", -1024)+printf("% d", -1024));
+
+	printf("%d\n", _printf("% +i + %+ i = % +d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX))+printf("%+i + %+i = %+d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX)));
+	printf("%d\n", _printf("% +i + %+ i = % +d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX)));
 	/*int n = 56;
 	void *p;
 	char *string = "test for the print_s func";
@@ -19,10 +31,13 @@ int main(void)
 	_printf("lets see if this works %c\n", 65);
 	_printf("thi is test sonogon %r\n", string);
 	_printf("%R\n", "sono-gon");*/
-	_printf("%s\n", NULL);
+	/*printf("%d\n", _printf("%+i + %+i = %+i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX)) + printf("%+i + %+i = %+i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX)));
+	printf("%d\n", _printf("Can you print an address?\n%p\nNice!\n", (void *)-1)+printf("Can you print an address?\n%p\nNice!\n", (void *)-1));
+	printf("%d\n", _printf("%p\n", (void *)0x7ffe637541f0)+printf("%p\n", (void *)0x7ffe637541f0));
+	printf("%d\n", _printf("%o", 1024) + printf("%o", 1024));
 
-	_printf("Complete the sentence: You %s nothing, jon snow.\n", (char *)0);
-	_printf("%S\n %S", "Best\nschool","\0");
+	printf("%d\n", _printf("Complete the sentence: You %s nothing, jon snow.\n", (char *)0));
+	_printf("%S\n", "Best\nschool");*/
     /*int len, len2, neg = -40, x = 0, y = 0;
     unsigned int ui;
     void *addr;    

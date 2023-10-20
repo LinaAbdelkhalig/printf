@@ -18,7 +18,7 @@ int _puts(char *string)
 		}
 	}
 	else
-		_puts("(null)");
+		return(_puts("(null)"));
 
 	return (i);
 }
