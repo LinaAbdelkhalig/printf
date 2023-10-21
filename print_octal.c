@@ -12,7 +12,7 @@ int print_octal(unsigned int num)
 	char *oct;
 
 	if (num < 8)
-		count += print_int(num);
+		return (print_int(num));
 	oct = malloc(sizeof(char) * 12);
 	if (!oct)
 		return (-1);
