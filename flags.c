@@ -31,15 +31,21 @@ int space_flag(int num)
 
 /**
  * hash_flag - change the first character in o to 0
+ * @spec: the specifier
  * @num: the number to be checked
- * Return: 1 if 0 was inserted, elsewise 0
+ * Return: number of prints if any, elsewise 0
  */
 
-int hash_flag(int num)
+int hash_flag(char spec, int num)
 {
-	(void)num;
-	_putchar('9');
-	return (0);
+	int count = 0;
+
+	if (num == 0)
+		return (0);
+	count += _putchar('0');
+	if (spec == 'x' || spec == 'X')
+		count += _putchar(spec);
+	return (count)
 }
 
 /**
@@ -66,22 +72,17 @@ int handle_flag(char format, int p_flag, int s_flag, int h_flag, va_list list)
 			count += space_flag(num);
 		count += print_int(num);
 	}
-	else if (format == 'o')
-	{
-		ui = va_arg(list, unsigned int);
-		if (h_flag)
-			count += hash_flag(ui);
-		count += print_octal(ui);
-	}
 	else
 	{
 		ui = va_arg(list, unsigned int);
 		if (h_flag)
-			count += hash_flag(ui);
+			count += hash_flag(format, ui);
 		if (format == 'x')
 			count += print_hex(ui);
 		else if (format == 'X')
 			count += print_HEX(ui);
+		else if (format == 'o')
+			count += print_octal(ui);
 	}
 	return (count);
 }

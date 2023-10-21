@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	printf("%d\n", _printf("%+d", 0)+ printf("%+d", 0));
+	printf("%d\n", _printf("%#x", 1024)+ printf("%#o", 1024));
 	printf("%d\n", _printf("% ")); 
 	printf("%d\n", _printf("% % % % "));
 	printf("%d\n", _printf("%+i", -1024) + printf("%+d", -1024));
