@@ -45,7 +45,7 @@ int hash_flag(char spec, int num)
 	count += _putchar('0');
 	if (spec == 'x' || spec == 'X')
 		count += _putchar(spec);
-	return (count)
+	return (count);
 }
 
 /**
